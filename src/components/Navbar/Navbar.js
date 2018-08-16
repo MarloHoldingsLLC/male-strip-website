@@ -34,38 +34,44 @@ const Contact = () => (
   </div>
 )
 
-const Topic = ({ match }) => (
+const News = () => (
   <div>
-    <h3>{match.params.topicId}</h3>
+    <h2>News</h2>
   </div>
 )
 
-const Topics = ({ match }) => (
+const City = ({ match }) => (
   <div>
-    <h2>Topics</h2>
+    <h3>{match.params.cityId}</h3>
+  </div>
+)
+
+const Cities = ({ match }) => (
+  <div>
+    <h2>Cities</h2>
     <ul>
       <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
+        <Link to={`${match.url}/atlanta`}>
+          Atlanta
         </Link>
       </li>
       <li>
-        <Link to={`${match.url}/components`}>
-          Components
+        <Link to={`${match.url}/charlotte`}>
+          Charlotte
         </Link>
       </li>
       <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
+        <Link to={`${match.url}/new-york`}>
+          New York
         </Link>
       </li>
     </ul>
 
-    <Route path={`${match.path}/:topicId`} component={Topic} />
+    <Route path={`${match.path}/:cityId`} component={City} />
     <Route
       exact
       path={match.path}
-      render={() => <h3>Please select a topic.</h3>}
+      render={() => <h3>Please select a city.</h3>}
     />
   </div>
 )
@@ -79,7 +85,8 @@ const Navbar = () => (
         <Button><Link to='/muscle-men'>Muscle Men</Link></Button>
         <Link to='/locations'><LocationLinks /></Link>
         <Button><Link to='/contact'>Contacts</Link></Button>
-        <Button><Link to='/topics'>Topics</Link></Button>
+        <Button><Link to='/news'>News</Link></Button>
+        <Button><Link to='/cities'>Cities</Link></Button>
       </Nav>
 
       <Route exact path='/' component={Home} />
@@ -87,7 +94,8 @@ const Navbar = () => (
       <Route exact path='/muscle-men' component={Muscle} />
       <Route exact path='/locations' component={Locations} />
       <Route exact path='/contact' component={Contact} />
-      <Route path='/topics' component={Topics} />
+      <Route exact path='/news' component={News} />
+      <Route path='/cities' component={Cities} />
     </div>
   </Router>
 )
@@ -108,5 +116,9 @@ const Nav = styled.nav`
     @media(max-width: 800px) {
       font-size: .8rem;
     }
+  }
+
+  @media(max-width: 800px){
+    justify-content: space-between;
   }
 `

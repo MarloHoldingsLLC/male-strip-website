@@ -29,7 +29,7 @@ class LocationLinks extends React.Component {
           aria-haspopup='true'
           onClick={this.handleClick}
         >
-          <Text>Locations</Text>
+          <Text>Location</Text>
         </Button>
         <Menu
           id='simple-menu'
