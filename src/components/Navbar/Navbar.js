@@ -24,7 +24,7 @@ const Muscle = () => (
 
 const Locations = () => (
   <div>
-    <h2>Loactions</h2>
+    <h2>Locations</h2>
   </div>
 )
 
@@ -102,5 +102,11 @@ const Nav = styled.nav`
 
   a {
     font-size: 1.4rem;
+    text-decoration: none;
+    color: black;
+
+    @media(max-width: 800px) {
+      font-size: .8rem;
+    }
   }
 `
