@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-class Tabs extends Component {
+class Hello extends Component {
   render () {
     return <h1>Hello World</h1>
   }
 }
 
-export default Tabs
+export default Hello

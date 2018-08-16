@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 import mainLogo from '../../assets/MM-Web-optimized.gif'
 
-export const Hero = props => {
+const Hero = props => {
   return (
     <Wrapper>
       <ImageBox>
-        <img src={mainLogo} />
+        <img src={mainLogo} alt='males' />
         <h5>
           MALE STRIPPERS
         </h5>
-        <img src={mainLogo} />
+        <img src={mainLogo} alt='males' />
       </ImageBox>
 
     </Wrapper>
@@ -27,14 +27,16 @@ const ImageBox = styled.div`
   text-align: center;
   font-size: 3rem;
   img {
-    height: 9rem;
+    height: 18rem;
   }
 
-  @media(max-width: 600px) {
-    font-size: 1rem;
+  @media(max-width: 800px) {
+    font-size: 1.4rem;
     
     img {
-      height: 5rem;
+      height: 7rem;
     }
   }
 `
+
+export default Hero

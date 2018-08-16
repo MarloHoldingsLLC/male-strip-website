@@ -1,46 +1,33 @@
-import React, { Component } from 'react'
-import { render } from 'react-dom'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import React from 'react'
+import styled from 'styled-components'
+import './index.css'
 
-// <=== Components ===>//
+import Hero from './components/Hero'
+import Navbar from './components/Navbar'
 
-import Navbar from './components/Navbar/Navbar'
+const App = () => (
+  <Wrapper>
+    <Hero />
+    <Navbar />
+  </Wrapper>
+)
 
-// <=== local imports ===>//
-import logo from './logo.svg'
-import { Hero } from './components/Hero/Hero'
-
-// <=== Theme ===>//
-import indigo from '@material-ui/core/colors/indigo'
-import pink from '@material-ui/core/colors/pink'
-import red from '@material-ui/core/colors/red'
-
-const theme = createMuiTheme({
-  typography: {},
-  palette: {
-    type: 'dark',
-    primary: indigo,
-    secondary: pink,
-    error: red,
-    // Used by `getContrastText()` to maximize the contrast between the background and
-    // the text.
-    contrastThreshold: 3,
-    // Used to shift a color's luminance by approximately
-    // two indexes within its tonal palette.
-    // E.g., shift from Red 500 to Red 300 or Red 700.
-    tonalOffset: 0.2
-  }
-})
-
-class App extends Component {
-  render () {
-    return (
-      <MuiThemeProvider theme={theme}>
-        <Hero />
-        <Navbar />
-      </MuiThemeProvider>
-    )
-  }
-}
+const Wrapper = styled.div`
+  background: black;
+  color: white;
+`
 
 export default App
+
+// import { BrowserRouter, Switch } from 'react-router-dom'
+// import Router from './routes'
+
+// const App = () => (
+//   <BrowserRouter>
+//     <Switch>
+//       <Router />
+//     </Switch>
+//   </BrowserRouter>
+// )
+
+// export default App
